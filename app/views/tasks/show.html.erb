@@ -6,13 +6,30 @@
 
 <div class="complete">
 <% message = @task.completed ? 'This task is complete' : 'This task is not completed yet' %>
+<% mark = @task.completed ? 'far fa-check-square' : 'far fa-square' %>
+<p><i class="<%= mark %>"></i>  <%= message %></p>
 
-  <form action="" method="post">
-    <input type="checkbox" name="completed" >
-    <label for="completed"><%= message %></label>
-  </form>
 </div>
 
-<div class="link">
-<%= link_to 'Back to tasks', tasks_path %>
+<div class="buttons">
+  <div class="link">
+  <%= link_to edit_task_path(@task) do %>
+  <i class="fas fa-edit"></i>
+  Edit post
+  <% end %>
+  </div>
+
+  <div class="link">
+  <%= link_to task_path(@task), method: :delete, data: {confirm: "Are you sure?"} do %>
+  <i class="fas fa-trash-alt"></i>
+  Delete
+  <% end %>
+  </div>
+
+  <div class="link">
+  <%= link_to tasks_path do%>
+  <i class="fas fa-arrow-alt-circle-left"></i>
+   Back to tasks
+  <% end %>
+  </div>
 </div>

@@ -22,16 +22,29 @@ h1 {
 
 .complete {
   padding: 40px;
+  margin-bottom: 30px;
 }
 
 .link {
   text-decoration: none;
   font-family: arial;
   color: black;
+  border: 1px solid grey;
+  padding : 20px 20px;
 }
 
 .link:hover {
   text-decoration: none;
   color: grey;
   font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form {
+  margin-bottom: 40px;
 }

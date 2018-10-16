@@ -1,6 +1,6 @@
-<h1> Edit the task: <%= task.title%></h1>
+<h1> Edit the task: <%= @task.title %></h1>
 
-<div>
+<div class="form">
   <%= form_for(@task) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -8,11 +8,20 @@
   <%= f.label :details %>
   <%= f.text_field :details %>
 
+  <%= f.check_box :completed %>
+  <%= f.label :completed%>
+
   <%= f.submit %>
   <% end %>
-
 </div>
 
 <div>
-  <%= link_to 'Back to list', tasks_path %>
+  <form action="" method="patch">
+  </form>
+</div>
+
+<div class="buttons">
+  <div class="link">
+    <%= link_to 'Back to list', tasks_path %>
+  </div>
 </div>
